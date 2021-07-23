@@ -50,6 +50,11 @@ public class RLSwordItem extends SwordItem implements IRLTool{
 	public int getVariants() {
 		return Config.TEXTURES_SWORD.get();
 	}
+
+	@Override
+	public boolean getIsRepairable(ItemStack toRepair, ItemStack repair) {
+		return repair.getItem().equals(RLItems.best_shard);
+	}
 	
 	@Override
 	public List<String> getStatsLore(ItemStack stack){
